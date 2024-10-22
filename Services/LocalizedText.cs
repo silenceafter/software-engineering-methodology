@@ -8,5 +8,15 @@ namespace abstract_factory.Services
         {
             return LocalizedTexts.Translations[culture]["HeaderContent"];
         }
+
+        public List<string> GetMainContent(string culture)
+        {
+            return LocalizedTexts.Translations[culture]["MainContent"];
+        }
+
+        public List<string> GetFooterContent(string culture)
+        {
+            return LocalizedTexts.Translations[culture]["FooterContent"];
+        }
     }
 }

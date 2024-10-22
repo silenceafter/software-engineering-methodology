@@ -1,8 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model abstract_factory.Models.UserInterfaceViewModel
+@{
+    ViewData["Title"] = "Абстрактная фабрика. Интерфейсы на разных языках";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="lead text-center">
+              @Model.Text.MainContext["Main"]
+            </p>
+        </div>
+    </div>
 </div>

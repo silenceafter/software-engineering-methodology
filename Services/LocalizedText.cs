@@ -2,9 +2,9 @@
 
 namespace abstract_factory.Services
 {
-    public interface LocalizedText : IText
+    public interface LocalizedText
     {
-        public List<string> GetHeaderContent(string culture)
+        /*public List<string> GetHeaderContent(string culture)
         {
             return LocalizedTexts.Translations[culture]["HeaderContent"];
         }
@@ -17,6 +17,6 @@ namespace abstract_factory.Services
         public List<string> GetFooterContent(string culture)
         {
             return LocalizedTexts.Translations[culture]["FooterContent"];
-        }
+        }*/
     }
 }

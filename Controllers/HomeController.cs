@@ -1,4 +1,6 @@
-﻿using abstract_factory.Models;
+﻿using abstract_factory.Factories;
+using abstract_factory.Interfaces;
+using abstract_factory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,24 +9,38 @@ namespace abstract_factory.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IText _textProvider;
+        private IUserInterfaceFactory _factory;
 
-        public HomeController(ILogger<HomeController> logger, IText textProvider)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _textProvider = textProvider;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string lang = "ru")
         {
-            var culture = HttpContext.Items["Culture"]?.ToString() ?? "ru";
+            switch (lang)
+            {
+                case "fr":
+                    //_factory = new FrenchUserInterfaceFactory();
+                    break;
+                case "it":
+                    //_factory = new ItalianUserInterfaceFactory();
+                    break;
+                default:
+                    _factory = new RussianUserInterfaceFactory();
+                    break;
+            }
 
-            ViewBag.HeaderMenu = _textProvider.GetHeaderMenu(culture);
-            ViewBag.FooterMenu = _textProvider.GetFooterMenu(culture);
-            return View();
+            var model = new UserInterfaceViewModel
+            {
+                Text = _factory.CreateText().GetText(),
+                /*ImagePath = _factory.CreateImage().GetImagePath(),
+                HelpContent = _factory.CreateHelp().GetHelpContent()*/
+            };
+            return View(model);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Help()
         {
             return View();
         }

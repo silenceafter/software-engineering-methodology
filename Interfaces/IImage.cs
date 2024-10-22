@@ -2,5 +2,6 @@
 {
     public interface IImage
     {
+        string GetImagePath();
     }
 }

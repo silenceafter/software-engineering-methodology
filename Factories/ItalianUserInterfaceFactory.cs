@@ -1,4 +1,5 @@
 ﻿using abstract_factory.Interfaces;
+using abstract_factory.Products.French;
 using abstract_factory.Products.Italian;
 using abstract_factory.Products.Russian;
 
@@ -18,7 +19,7 @@ namespace abstract_factory.Factories
 
         public IImage CreateImage()
         {
-            throw new NotImplementedException();
+            return new ItalianImage();
         }
     }
 }

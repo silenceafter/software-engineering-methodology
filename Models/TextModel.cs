@@ -2,6 +2,7 @@
 {
     public class TextModel
     {
+        public string Title { get; set; }
         public Dictionary<string, string> HeaderContext { get; set; }
         public Dictionary<string, string> MainContext { get; set; }
         public Dictionary<string, string> FooterContext { get; set; }

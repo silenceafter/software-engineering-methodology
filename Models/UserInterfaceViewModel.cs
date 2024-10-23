@@ -3,7 +3,7 @@
     public class UserInterfaceViewModel
     {
         public TextModel Text { get; set; }
-        public string ImagePath { get; set; }
+        public PhotoModel Image { get; set; }
         public string HelpContent { get; set; }
     }
 }

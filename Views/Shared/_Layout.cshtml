@@ -38,9 +38,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - abstract_factory - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="bg-light text-center text-lg-start">
+        <div class="container p-4">
+            <p class="text-center">&copy; @Model.Text.FooterContext["Copyright"]</p>
+            <p class="text-center">@Model.Text.FooterContext["Contacts"]</a></p>
+            <p class="text-center">@Model.Text.FooterContext["Address"]</p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

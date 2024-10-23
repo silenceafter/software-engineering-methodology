@@ -1,6 +1,6 @@
 ﻿@model abstract_factory.Models.UserInterfaceViewModel
 @{
-    ViewData["Title"] = "Абстрактная фабрика. Интерфейсы на разных языках";
+    ViewData["Title"] = @Model.Text.Title;
 }
 
 <div class="container mt-5">
@@ -9,6 +9,46 @@
             <p class="lead text-center">
               @Model.Text.MainContext["Main"]
             </p>
+            <!-- Gallery -->
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="@Model.Image.Images["Moscow-1-h"]"
+                         style="width: 300px; height: auto;"
+                         class="shadow-1-strong rounded mb-4"
+                         alt="Boat on Calm Water" />
+
+                    <img src="@Model.Image.Images["Moscow-2-v"]"
+                         style="width: 300px; height: 550px;"
+                         class="shadow-1-strong rounded mb-4"
+                         alt="Wintry Mountain Landscape" />
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="@Model.Image.Images["SaintPetersburg-3-v"]"
+                         style="width: 300px; height: auto;"
+                         class="shadow-1-strong rounded mb-4"
+                         alt="Mountains in the Clouds" />
+
+                    <img src="@Model.Image.Images["Moscow-6-h"]"
+                         style="width: 300px; height: auto;"
+                         class="shadow-1-strong rounded mb-4"
+                         alt="Boat on Calm Water" />
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="@Model.Image.Images["Kazan-5-h"]"
+                         style="width: 300px; height: auto;"
+                         class="shadow-1-strong rounded mb-4"
+                         alt="Waves at Sea" />
+
+                    <img src="@Model.Image.Images["SaintPetersburg-4-v"]"
+                         style="width: 300px; height: auto;"
+                         class="shadow-1-strong rounded mb-4"
+                         alt="Yosemite National Park" />
+                </div>
+            </div>
+
+            <!-- Gallery -->
         </div>
     </div>
 

@@ -34,8 +34,8 @@ namespace abstract_factory.Controllers
             var model = new UserInterfaceViewModel
             {
                 Text = _factory.CreateText().GetText(),
-                /*ImagePath = _factory.CreateImage().GetImagePath(),
-                HelpContent = _factory.CreateHelp().GetHelpContent()*/
+                Image = _factory.CreateImage().GetImagePath(),
+                /*HelpContent = _factory.CreateHelp().GetHelpContent()*/
             };
             return View(model);
         }

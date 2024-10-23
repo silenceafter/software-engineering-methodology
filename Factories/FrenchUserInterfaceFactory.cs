@@ -19,7 +19,7 @@ namespace abstract_factory.Factories
 
         public IImage CreateImage()
         {
-            throw new NotImplementedException();
+            return new FrenchImage();
         }
     }
 }

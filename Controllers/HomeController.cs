@@ -21,10 +21,10 @@ namespace abstract_factory.Controllers
             switch (lang)
             {
                 case "fr":
-                    //_factory = new FrenchUserInterfaceFactory();
+                    _factory = new FrenchUserInterfaceFactory();
                     break;
                 case "it":
-                    //_factory = new ItalianUserInterfaceFactory();
+                    _factory = new ItalianUserInterfaceFactory();
                     break;
                 default:
                     _factory = new RussianUserInterfaceFactory();
